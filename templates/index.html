@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>TruthLens AI | Fake Media Detection</title>
 
 <style>
@@ -154,6 +153,7 @@
             #c084fc,
             #67e8f9
         );
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -378,7 +378,6 @@
 
     .progress-fill {
         height: 100%;
-        width: {{ confidence }}%;
         background: linear-gradient(90deg, #6366f1, #a855f7);
         border-radius: 20px;
     }
@@ -527,13 +526,11 @@
     }
 
 </style>
-```
 
 </head>
 
 <body>
 
-```
 <!-- NAVBAR -->
 
 <nav class="navbar">
@@ -609,7 +606,7 @@
         </div>
 
 
-        <form method="POST">
+        <form method="POST" action="{{ url_for('home') }}">
 
             <label class="input-label">
                 News content
@@ -697,7 +694,10 @@
 
                 <div class="progress">
 
-                    <div class="progress-fill"></div>
+                    <div
+                        class="progress-fill"
+                        style="width: {{ confidence|default(0) }}%;"
+                    ></div>
 
                 </div>
 
@@ -817,7 +817,6 @@
     TruthLens AI · Fake Media Detection using NLP & Machine Learning
 
 </footer>
-```
 
 </body>
 
