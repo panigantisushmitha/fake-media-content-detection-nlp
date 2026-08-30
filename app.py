@@ -6,10 +6,10 @@ import hashlib
 app = Flask(__name__)
 
 # Load the trained model
-model = joblib.load("model.pkl")
+model = joblib.load("fake_news_model.pkl")
 
 # Load the text vectorizer
-vectorizer = joblib.load("vectorizer.pkl")
+vectorizer = joblib.load("tfidf.pkl")
 
 
 @app.route("/", methods=["GET", "POST"])
